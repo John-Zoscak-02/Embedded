@@ -40,6 +40,26 @@ void Task() {
     }
 }
 
+int position(uint8_t data) {
+    signed short WEIGHTS[] = {334, 238, 142, 48, -48, -142, -238, -334};
+   // Declare kbits to count the number of bits that were 1
+   uint8_t kbits = 0;
+   // Declare kpos for arithmetic to determine the displacement from the center
+   int32_t kpos = 0;
+   uint8_t i = 0;
+   for (i = 0; i < 8; i++) {
+       // If a pin was 1, then add it to kpos and increment the kbits counter
+       if (data & 0x01) {
+           kpos += WEIGHTS[i];
+           kbits++;
+       }
+       // Look at the next pin in the next loop
+       data = data >> 1;
+   }
+   // return average of all of the weights of the active pins
+   return kpos / kbits;
+}
+
  int main(void) {
     FSMType Line_Center_FSM;
 
@@ -63,7 +83,8 @@ void Task() {
         // Whatever this file's global bump input variable is, give that to the FSMs BumpInput
         Line_Center_FSM.BumpInput = bump_input;
         // Whatever this file's global position input variable is, give that to the FSMs BumpInput
-        Line_Center_FSM.Position = reflectance_input;
+        Line_Center_FSM.Position = position(reflectance_input);
+        Line_Center_FSM.Lost = (reflectance_input == 0);
 //        reflectance_input = Reflectance_Read(1000);
 //        UART0_OutString("Got Here \n\r");
         Line_Center_FSM.CurrentState = NextStateFunction(&Line_Center_FSM);
