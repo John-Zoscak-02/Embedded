@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;TimerInterrupt/InterruptsMain.c&apos;" deleteContents="false" description="Delete resource &apos;TimerInterrupt/InterruptsMain.c&apos;" element1="/TimerInterrupt/InterruptsMain.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1646237483183"/>
+</session>

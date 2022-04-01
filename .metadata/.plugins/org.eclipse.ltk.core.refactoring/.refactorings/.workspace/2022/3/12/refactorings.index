@@ -1,0 +1,5 @@
+1647270996320	Delete resource 'TimerInterrupt/line_sensor'
+1647271013600	Delete resource 'TakeFive/line_sensor'
+1647488359352	Delete resource 'TakeFive/TimerA1Main.c'
+1647634613066	Delete resource 'TakeFive/startup_msp432p401r_ccs.c'
+1647634615369	Delete resource 'TakeFive/system_msp432p401r.c'

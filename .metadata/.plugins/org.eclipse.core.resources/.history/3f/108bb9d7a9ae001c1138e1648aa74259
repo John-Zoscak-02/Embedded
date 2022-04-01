@@ -1,0 +1,112 @@
+/* DriverLib Includes */
+#include "driverlib.h"
+
+/* Standard Includes */
+#include <stdint.h>
+
+/* Project Includes */
+#include "PWM.h"
+#include "Clock.h"
+#include "Motor.h"
+#include "Launchpad.h"
+
+volatile uint8_t counter;
+volatile uint8_t reflectance_input;
+volatile uint8_t bump_input;
+volatile uint8_t launchpad;
+
+uint8_t data;
+
+// Task to be called on a periodic basis by timer a1
+void Task() {
+//    UART0_OutString("In Task \n\r");
+    counter++;
+    // on every tenth call of task, call reflectance start
+    if (counter == 10) {
+        Reflectance_Start();
+    }
+    // on every tenth call of task (delayed by 1), call reflectance end and the position global variable to it
+    else if (counter == 11) {
+        reflectance_input = Reflectance_End();
+    }
+    // on every tenth call of task (delayed by 2), call bump read and set the bump read global variable to it
+    // reset counter to two, this will ensure that ten cycles passed between the recent reflectance start and the next one
+    else if (counter >= 12) {
+        counter = 2;
+        bump_input = Bump_Read();
+    }
+}
+
+int main(void)  {
+    FSMType Line_Center_FSM;
+
+    // Counter, the global position variable inits to zero, the global bump variable inits to zero
+    counter = 0;
+    reflectance_input = 0x00;
+    bump_input = 0x00;
+    launchpad = 0x00;
+
+    // Stop watchdog timer
+    WDT_A_holdTimer();
+
+    // Call Appropriate Initializations
+    Clock_Init();
+    LaunchPad_Init();
+    PWM_Init(1, 0, 0);
+    Motor_Init();
+
+    // Initialize the FSM
+    TimerA1_Init(&Task, 500);
+    InitializeFSM(&Line_Center_FSM);
+    UART0_Init();
+
+    // Continuously Check SW1 and SW2 and set Duty Cycle According to their value
+    while(1){
+        // The following code is for controlling the motors with the switch buttons
+//        data = LaunchPad_Input();
+//        // If no switch button is being pressed, do not turn the motors
+//        if (data == 0) {
+//            Motor_Stop();
+//        }
+//        // If the p1 switch button is pressed, turn right
+//        else if (data == 1) {
+//            Motor_Right(10, 10);
+//        }
+//        // If the p4 switch button is pressed, turn left
+//        else if (data == 2) {
+//            Motor_Left(10, 10);
+//        }
+//        // If the both switch buttons are pressed, go straight
+//        else if (data == 3) {
+//            Motor_Forward(10, 10);
+//        }
+        // The following code is for repeating a motor cycle
+        data = LaunchPad_Input();
+        if (data == 1) {
+            Motor_Forward(20, 20);
+            Clock_Delay1ms(1000);
+            Motor_Right(20, 20);
+            Motor_Forward(20, 20);
+            Clock_Delay1ms(1000);
+            Motor_Right(20, 20);
+            Motor_Forward(20, 20);
+            Clock_Delay1ms(1000);
+            Motor_Right(20, 20);
+            Clock_Delay1ms(1000);
+            Motor_Backward(20, 20);
+            Clock_Delay1ms(1000);
+            Motor_Left(20, 20);
+            Clock_Delay1ms(1000);
+            Motor_Backward(20, 20);
+            Clock_Delay1ms(1000);
+            Motor_Left(20, 20);
+            Clock_Delay1ms(1000);
+            Motor_Backward(20, 20);
+            Clock_Delay1ms(1000);
+            Motor_Left(20, 20);
+            Clock_Delay1ms(1000);
+            Motor_Stop();
+            Clock_Delay1ms(1000);
+        }
+    }
+}

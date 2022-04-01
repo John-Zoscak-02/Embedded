@@ -1,0 +1,81 @@
+///* DriverLib Includes */
+//#include "driverlib.h"
+//
+///* Standard Includes */
+//#include <stdint.h>
+//#include <stdbool.h>
+//
+///* Project Includes */
+//#include "Clock.h"
+//#include "TimerA1.h"
+//#include "UART0.h"
+//#include "LaunchPad.h"
+//#include "Reflectance.h"
+//#include "Bump.h"
+//#include "FSM.h"
+
+//volatile uint8_t counter;
+//volatile uint8_t reflectance_input;
+//volatile uint8_t bump_input;
+
+void Task() {
+//    counter++;
+//    if (counter == 10) {
+//        Reflectance_Start();
+//    }
+//    else if (counter == 11) {
+//        reflectance_input = Reflectance_End();
+//    }
+//    else if (counter >= 12) {
+//        counter = 2;
+//        bump_input = Bump_Read();
+//    }
+}
+
+int main(void) {
+//    FSMType Line_Center_FSM;
+//
+//    counter = 0;
+//    reflectance_input = 0x00;
+//    bump_input = 0x00;
+//
+//    Clock_Init();
+//    TimerA1_Init(&Task, 100);
+//    UART0_Init();
+//
+//    InitializeFSM(&Line_Center_FSM);
+
+    while(1){
+//        Line_Center_FSM.BumpInput = bump_input;
+//        Line_Center_FSM.Position = reflectance_input;
+//
+//        Line_Center_FSM.CurrentState = NextStateFunction(&Line_Center_FSM);
+//
+//        switch (Line_Center_FSM.CurrentState) {
+//            case 0:
+//                UART0_OutString("Inactive\n\r");
+//                break;
+//            case 1:
+//                UART0_OutString("Bumped\n\r");
+//                break;
+//            case 2:
+//                UART0_OutString("PosLeft\n\r");
+//                break;
+//            case 3:
+//                UART0_OutString("PosRight\n\r");
+//                break;
+//            case 4:
+//                UART0_OutString("PosCenter\n\r");
+//                break;
+//            case 5:
+//                UART0_OutString("PosLost\n\r");
+//                break;
+//            default:
+//                UART0_OutString("Invalid State\n\r");
+//                break;
+//
+//        }
+//
+//        OutputFunction(&Line_Center_FSM);
+    }
+}

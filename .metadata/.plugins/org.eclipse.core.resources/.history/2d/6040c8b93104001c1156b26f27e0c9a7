@@ -1,0 +1,65 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+SHELL = cmd.exe
+
+# Add inputs and outputs from these tool invocations to the build variables 
+CMD_SRCS += \
+../msp432p401r.cmd 
+
+C_SRCS += \
+../Clock.c \
+../FSM.c \
+../LED.c \
+../PushButton.c \
+../Switch.c \
+../main.c \
+../system_msp432p401r.c 
+
+C_DEPS += \
+./Clock.d \
+./FSM.d \
+./LED.d \
+./PushButton.d \
+./Switch.d \
+./main.d \
+./system_msp432p401r.d 
+
+OBJS += \
+./Clock.obj \
+./FSM.obj \
+./LED.obj \
+./PushButton.obj \
+./Switch.obj \
+./main.obj \
+./system_msp432p401r.obj 
+
+OBJS__QUOTED += \
+"Clock.obj" \
+"FSM.obj" \
+"LED.obj" \
+"PushButton.obj" \
+"Switch.obj" \
+"main.obj" \
+"system_msp432p401r.obj" 
+
+C_DEPS__QUOTED += \
+"Clock.d" \
+"FSM.d" \
+"LED.d" \
+"PushButton.d" \
+"Switch.d" \
+"main.d" \
+"system_msp432p401r.d" 
+
+C_SRCS__QUOTED += \
+"../Clock.c" \
+"../FSM.c" \
+"../LED.c" \
+"../PushButton.c" \
+"../Switch.c" \
+"../main.c" \
+"../system_msp432p401r.c" 
+
+

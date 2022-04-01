@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;LineSensor/line_sensort.h&apos; to &apos;line_sensor.h&apos;" description="Rename resource &apos;line_sensort.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="line_sensort.h" name="line_sensor.h" stamp="1644253993500" updateReferences="true"/>
+</session>
