@@ -641,7 +641,7 @@ void OutputFunction(FSMType *FSM) {
             Motor_Stop();
             break;
         case Lost:
-            Motor_Backward(20, 20);
+            Motor_Backward(10, 10);
             break;
     }
 

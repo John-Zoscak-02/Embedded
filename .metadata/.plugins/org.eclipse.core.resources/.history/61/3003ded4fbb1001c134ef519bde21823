@@ -32,7 +32,7 @@ FSMState NextStateFunction(FSMType *FSM)
 
     // Decode the current state, look into the current inputs
     switch (FSM->CurrentState) {
-        case Inactive:
+        case Inactive: {
             // Push buttons have highest priority
             if (FSM->LaunchPadInput & 0b01) {
                 if (FSM->Lost) {
@@ -64,8 +64,8 @@ FSMState NextStateFunction(FSMType *FSM)
             else {
                 NextState = Inactive;
             }
-            break;
-        case Bumped:
+            break; }
+        case Bumped: {
             // Push button Port 1 Pin 4 takes highest priority
             if (FSM->LaunchPadInput & 0b10) {
                 NextState = Inactive;
@@ -101,8 +101,8 @@ FSMState NextStateFunction(FSMType *FSM)
             else {
                 NextState = Bumped;
             }
-            break;
-        case PivotLeft:
+            break; }
+        case PivotLeft: {
             // Push button Port 1 Pin 4 takes highest priority
             if (FSM->LaunchPadInput & 0b10) {
                 NextState = Inactive;
@@ -126,8 +126,8 @@ FSMState NextStateFunction(FSMType *FSM)
                     NextState = CheckPivotLeft;
                 }
             }
-            break;
-        case CheckPivotLeft:
+            break; }
+        case CheckPivotLeft: {
             // Push button Port 1 Pin 4 takes highest priority
             if (FSM->LaunchPadInput & 0b10) {
                 NextState = Inactive;
@@ -163,8 +163,8 @@ FSMState NextStateFunction(FSMType *FSM)
                     NextState = PivotRight;
                 }
             }
-            break;
-        case RotateLeft:
+            break; }
+        case RotateLeft: {
             // Push button Port 1 Pin 4 takes highest priority
             if (FSM->LaunchPadInput & 0b10) {
                 NextState = Inactive;
@@ -191,8 +191,8 @@ FSMState NextStateFunction(FSMType *FSM)
                     NextState = CheckRotateLeft;
                 }
             }
-            break;
-        case CheckRotateLeft:
+            break; }
+        case CheckRotateLeft: {
             // Push button Port 1 Pin 4 takes highest priority
             if (FSM->LaunchPadInput & 0b10) {
                 NextState = Inactive;
@@ -228,8 +228,8 @@ FSMState NextStateFunction(FSMType *FSM)
                     NextState = PivotRight;
                 }
             }
-            break;
-        case ForwardLeft:
+            break; }
+        case ForwardLeft: {
             // Push button Port 1 Pin 4 takes highest priority
             if (FSM->LaunchPadInput & 0b10) {
                 NextState = Inactive;
@@ -256,8 +256,8 @@ FSMState NextStateFunction(FSMType *FSM)
                     NextState = CheckForwardLeft;
                 }
             }
-            break;
-        case CheckForwardLeft:
+            break; }
+        case CheckForwardLeft: {
             // Push button Port 1 Pin 4 takes highest priority
             if (FSM->LaunchPadInput & 0b10) {
                 NextState = Inactive;
@@ -293,8 +293,8 @@ FSMState NextStateFunction(FSMType *FSM)
                     NextState = PivotRight;
                 }
             }
-            break;
-        case Center:
+            break; }
+        case Center: {
             // Push button Port 1 Pin 4 takes highest priority
             if (FSM->LaunchPadInput & 0b10) {
                 NextState = Inactive;
@@ -321,8 +321,8 @@ FSMState NextStateFunction(FSMType *FSM)
                     NextState = CheckCenter;
                 }
             }
-            break;
-        case CheckCenter:
+            break; }
+        case CheckCenter: {
             // Push button Port 1 Pin 4 takes highest priority
             if (FSM->LaunchPadInput & 0b10) {
                 NextState = Inactive;
@@ -358,8 +358,8 @@ FSMState NextStateFunction(FSMType *FSM)
                     NextState = PivotRight;
                 }
             }
-            break;
-        case ForwardRight:
+            break; }
+        case ForwardRight: {
             // Push button Port 1 Pin 4 takes highest priority
             if (FSM->LaunchPadInput & 0b10) {
                 NextState = Inactive;
@@ -383,8 +383,8 @@ FSMState NextStateFunction(FSMType *FSM)
                     NextState = RotateRight;
                 }
             }
-            break;
-        case CheckForwardRight:
+            break; }
+        case CheckForwardRight: {
             // Push button Port 1 Pin 4 takes highest priority
             if (FSM->LaunchPadInput & 0b10) {
                 NextState = Inactive;
@@ -420,8 +420,8 @@ FSMState NextStateFunction(FSMType *FSM)
                     NextState = PivotRight;
                 }
             }
-            break;
-        case RotateRight:
+            break; }
+        case RotateRight: {
             // Push button Port 1 Pin 4 takes highest priority
             if (FSM->LaunchPadInput & 0b10) {
                 NextState = Inactive;
@@ -445,8 +445,8 @@ FSMState NextStateFunction(FSMType *FSM)
                     NextState = PivotRight;
                 }
             }
-            break;
-        case CheckRotateRight:
+            break; }
+        case CheckRotateRight: {
             // Push button Port 1 Pin 4 takes highest priority
             if (FSM->LaunchPadInput & 0b10) {
                 NextState = Inactive;
@@ -482,8 +482,8 @@ FSMState NextStateFunction(FSMType *FSM)
                     NextState = PivotRight;
                 }
             }
-            break;
-        case PivotRight:
+            break; }
+        case PivotRight: {
             // Push button Port 1 Pin 4 takes highest priority
             if (FSM->LaunchPadInput & 0b10) {
                 NextState = Inactive;
@@ -504,8 +504,8 @@ FSMState NextStateFunction(FSMType *FSM)
                     NextState = PivotRight;
                 }
             }
-            break;
-        case CheckPivotRight:
+            break; }
+        case CheckPivotRight: {
             // Push button Port 1 Pin 4 takes highest priority
             if (FSM->LaunchPadInput & 0b10) {
                 NextState = Inactive;
@@ -541,8 +541,8 @@ FSMState NextStateFunction(FSMType *FSM)
                     NextState = PivotRight;
                 }
             }
-            break;
-        case Lost:
+            break; }
+        case Lost: {
             // Push button Port 1 Pin 4 takes highest priority
             if (FSM->LaunchPadInput & 0b10) {
                 NextState = Inactive;
@@ -581,7 +581,7 @@ FSMState NextStateFunction(FSMType *FSM)
                     NextState = PivotRight;
                 }
             }
-            break;
+            break; }
     }
     return NextState;
 }
@@ -596,22 +596,22 @@ void OutputFunction(FSMType *FSM) {
             Motor_Stop();
             break;
         case PivotLeft:
-            Motor_Right(20, 20);
+            Motor_Left(20, 20);
             break;
         case CheckPivotLeft:
-            Motor_Right(20, 20);
+            Motor_Left(20, 20);
             break;
         case RotateLeft:
-            Motor_Right(0, 20);
+            Motor_Left(20, 0);
             break;
         case CheckRotateLeft:
-            Motor_Right(0, 20);
+            Motor_Left(20, 0);
             break;
         case ForwardLeft:
-            Motor_Forward(10, 20);
+            Motor_Forward(20, 10);
             break;
         case CheckForwardLeft:
-            Motor_Forward(10, 20);
+            Motor_Forward(20, 10);
             break;
         case Center:
             Motor_Forward(20, 20);
@@ -620,28 +620,28 @@ void OutputFunction(FSMType *FSM) {
             Motor_Forward(20, 20);
             break;
         case ForwardRight:
-            Motor_Forward(20, 10);
+            Motor_Forward(10, 20);
             break;
         case CheckForwardRight:
-            Motor_Forward(20, 10);
+            Motor_Forward(10, 20);
             break;
         case RotateRight:
-            Motor_Left(20, 0);
+            Motor_Right(0, 20);
             break;
         case CheckRotateRight:
-            Motor_Left(20, 0);
+            Motor_Right(0, 20);
             break;
         case PivotRight:
-            Motor_Left(20, 20);
+            Motor_Right(20, 20);
             break;
         case CheckPivotRight:
-            Motor_Left(20, 20);
+            Motor_Right(0, 20);
             break;
         case Bumped:
             Motor_Stop();
             break;
         case Lost:
-            Motor_Backward(20, 20);
+            Motor_Backward(10, 10);
             break;
     }
 

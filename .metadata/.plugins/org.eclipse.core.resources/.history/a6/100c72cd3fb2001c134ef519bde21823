@@ -596,22 +596,22 @@ void OutputFunction(FSMType *FSM) {
             Motor_Stop();
             break;
         case PivotLeft:
-            Motor_Right(20, 20);
+            Motor_Left(20, 20);
             break;
         case CheckPivotLeft:
-            Motor_Right(20, 20);
+            Motor_Left(20, 20);
             break;
         case RotateLeft:
-            Motor_Right(0, 20);
+            Motor_Left(20, 0);
             break;
         case CheckRotateLeft:
-            Motor_Right(0, 20);
+            Motor_Left(20, 0);
             break;
         case ForwardLeft:
-            Motor_Forward(10, 20);
+            Motor_Forward(20, 10);
             break;
         case CheckForwardLeft:
-            Motor_Forward(10, 20);
+            Motor_Forward(20, 10);
             break;
         case Center:
             Motor_Forward(20, 20);
@@ -620,28 +620,28 @@ void OutputFunction(FSMType *FSM) {
             Motor_Forward(20, 20);
             break;
         case ForwardRight:
-            Motor_Forward(20, 10);
+            Motor_Forward(10, 20);
             break;
         case CheckForwardRight:
-            Motor_Forward(20, 10);
+            Motor_Forward(10, 20);
             break;
         case RotateRight:
-            Motor_Left(20, 0);
+            Motor_Right(0, 20);
             break;
         case CheckRotateRight:
-            Motor_Left(20, 0);
+            Motor_Right(0, 20);
             break;
         case PivotRight:
-            Motor_Left(20, 20);
+            Motor_Right(20, 20);
             break;
         case CheckPivotRight:
-            Motor_Left(20, 20);
+            Motor_Right(0, 20);
             break;
         case Bumped:
             Motor_Stop();
             break;
         case Lost:
-            Motor_Backward(20, 20);
+            Motor_Backward(10, 10);
             break;
     }
 
