@@ -79,8 +79,31 @@ uint8_t Reflectance_End() {
     // 8. Turn off even and odd LEDs
     GPIO_setOutputLowOnPin(GPIO_PORT_P5, GPIO_PIN3);
     GPIO_setOutputLowOnPin(GPIO_PORT_P9, GPIO_PIN2);
+    //Get value from left center sensor
+    uint8_t left_center = result & 0x10;
+    //Get value from right center sensor
+    uint8_t right_center = result & 0x08;
 
-    return result;
+    /* Check robot status truth table
+     * INPUT (L,R) | OUTPUT
+     * ------------|------------
+     *      11     | ON_LINE (3)
+     *      10     | LEFT    (2)
+     *      01     | RIGHT   (1)
+     *      00     | LOST    (0)
+     */
+    if (left_center && right_center) {
+        return 0b11;
+    }
+    else if (left_center && ~right_center) {
+       return 0b10;
+    }
+    else if (~left_center && right_center) {
+       return 0b01;
+    }
+    else {
+        return 0b00;
+    }
 }
 
 

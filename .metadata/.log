@@ -8710,111 +8710,46 @@ org.json.JSONException: A JSONObject text must begin with '{' at 1 [character 2 
 	at com.ti.ccstudio.app.center.internal.CCSAppCenter.access$3(CCSAppCenter.java:358)
 	at com.ti.ccstudio.app.center.internal.CCSAppCenter$2.run(CCSAppCenter.java:234)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-!SESSION 2022-04-01 12:06:28.716 -----------------------------------------------
-eclipse.buildId=4.19.0.I20210303-1800
-java.version=11.0.13
-java.vendor=Eclipse Adoptium
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
-Framework arguments:  -product com.ti.ccstudio.branding.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product com.ti.ccstudio.branding.product
 
-!ENTRY com.ti.common.core 1 0 2022-04-01 12:06:31.363
-!MESSAGE path=ccs_base/DebugServer
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:17:43.835
+!MESSAGE DS_ERROR: CORTEX_M4_0: GEL: Encountered a problem loading file: C:\Users\Student\workspace_v11\LineFollower\Debug\LineFollower.out Could not open file
 
-!ENTRY com.ti.common.core 1 0 2022-04-01 12:06:31.363
-!MESSAGE debugServerDir=C:/ti/ccs1110/ccs/ccs_base/DebugServer
 
-!ENTRY com.ti.ccstudio.ui 1 0 2022-04-01 12:06:37.654
-!MESSAGE CCS IDE session started!
-	CCS build: 11.1.0.00011
-	CCS location: C:/ti/ccs1110/ccs
-	Workspace location: C:/Users/Student/workspace_v11
-
-!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-01 12:06:37.811
-!MESSAGE constructor
-
-!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-01 12:06:37.812
-!MESSAGE done with directories
-
-!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-01 12:06:37.812
-!MESSAGE loading ti_logger
-
-!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-01 12:06:37.814
-!MESSAGE Platform os: win32
-
-!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-01 12:06:37.815
-!MESSAGE loading cToolsIF
-
-!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-01 12:06:37.817
-!MESSAGE loading cTools
-
-!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-01 12:06:37.819
-!MESSAGE loading TraceFactory
-
-!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-01 12:06:37.820
-!MESSAGE loading sqlite3
-
-!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-01 12:06:37.822
-!MESSAGE loading CloudTrace
-
-!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-01 12:06:37.828
-!MESSAGE CloudTrace interface loaded
-
-!ENTRY com.ti.ccstudio.project.ui.webcontent 1 0 2022-04-01 12:06:37.882
-!MESSAGE CCS HTTP adapter started! [ccs.port:59577] - Open 'http://localhost:59577/ide' in web browser to see listing of available APIs...
-
-!ENTRY com.ti.ccstudio.app.center 4 0 2022-04-01 12:06:37.941
-!MESSAGE An internal error was logged by 'com.ti.ccstudio.app.center'.
-!STACK 0
-org.json.JSONException: A JSONObject text must begin with '{' at 1 [character 2 line 1]
-	at org.json.JSONTokener.syntaxError(JSONTokener.java:433)
-	at org.json.JSONObject.<init>(JSONObject.java:189)
-	at org.json.JSONObject.<init>(JSONObject.java:316)
-	at com.ti.ccstudio.app.center.internal.CCSAppCenter.processImports(CCSAppCenter.java:251)
-	at com.ti.ccstudio.app.center.internal.CCSAppCenter.getAppJson_0(CCSAppCenter.java:214)
-	at com.ti.ccstudio.app.center.internal.CCSAppCenter.access$1(CCSAppCenter.java:205)
-	at com.ti.ccstudio.app.center.internal.CCSAppCenter$1.run(CCSAppCenter.java:177)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-
-!ENTRY com.ti.ccstudio.app.center 4 0 2022-04-01 12:06:37.942
-!MESSAGE An internal error was logged by 'com.ti.ccstudio.app.center'.
-!STACK 0
-org.json.JSONException: A JSONObject text must begin with '{' at 1 [character 2 line 1]
-	at org.json.JSONTokener.syntaxError(JSONTokener.java:433)
-	at org.json.JSONObject.<init>(JSONObject.java:189)
-	at org.json.JSONObject.<init>(JSONObject.java:316)
-	at com.ti.ccstudio.app.center.internal.CCSAppCenter.convertToFullpaths(CCSAppCenter.java:325)
-	at com.ti.ccstudio.app.center.internal.CCSAppCenter.getAppJson_0(CCSAppCenter.java:223)
-	at com.ti.ccstudio.app.center.internal.CCSAppCenter.access$1(CCSAppCenter.java:205)
-	at com.ti.ccstudio.app.center.internal.CCSAppCenter$1.run(CCSAppCenter.java:177)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-
-!ENTRY com.ti.ccstudio.app.center 4 0 2022-04-01 12:06:37.944
-!MESSAGE An internal error was logged by 'com.ti.ccstudio.app.center'.
-!STACK 0
-org.json.JSONException: A JSONObject text must begin with '{' at 1 [character 2 line 1]
-	at org.json.JSONTokener.syntaxError(JSONTokener.java:433)
-	at org.json.JSONObject.<init>(JSONObject.java:189)
-	at org.json.JSONObject.<init>(JSONObject.java:316)
-	at com.ti.ccstudio.app.center.internal.CCSAppCenter._replaceIusWithLatest(CCSAppCenter.java:361)
-	at com.ti.ccstudio.app.center.internal.CCSAppCenter.access$3(CCSAppCenter.java:358)
-	at com.ti.ccstudio.app.center.internal.CCSAppCenter$2.run(CCSAppCenter.java:234)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-
-!ENTRY com.ti.ccstudio.debug 1 0 2022-04-01 12:11:16.233
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:20:17.394
 !MESSAGE DS_ERROR: CORTEX_M4_0: JTAG Communication Error: (Error -261 @ 0x0) Invalid response was received from the XDS110. (Emulation package 9.6.0.00172) 
 
 
-!ENTRY com.ti.ccstudio.debug 1 0 2022-04-01 12:11:16.249
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:20:17.429
 !MESSAGE DS_ERROR: CORTEX_M4_0: Breakpoint Manager: Remove job failed: Register/memory write failure[22005]
 
 
-!ENTRY com.ti.ccstudio.debug 1 0 2022-04-01 12:13:48.639
-!MESSAGE DS_ERROR: CORTEX_M4_0: GEL: Error while executing OnRestart( 0 ): Specified reset is not allowed at this time
-	 at GEL_AdvancedReset("System Reset", 1) [msp432p401r.gel:344]
-	 at OnRestart(0)
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:21:31.653
+!MESSAGE DS_ERROR: CORTEX_M4_0: JTAG Communication Error: (Error -261 @ 0x0) Invalid response was received from the XDS110. (Emulation package 9.6.0.00172) 
 
-!SESSION 2022-04-02 15:32:42.645 -----------------------------------------------
+
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:21:31.677
+!MESSAGE DS_ERROR: CORTEX_M4_0: Breakpoint Manager: Remove job failed: Register/memory write failure[22005]
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:22:19.646
+!MESSAGE DS_ERROR: CS_DAP_0: Error initializing emulator: (Error -261 @ 0x0) Invalid response was received from the XDS110. (Emulation package 9.6.0.00172) 
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:22:19.829
+!MESSAGE DS_ERROR: Error initializing emulator:
+(Error -261 @ 0x0)
+Invalid response was received from the XDS110.
+(Emulation package 9.6.0.00172)
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:22:47.503
+!MESSAGE DS_ERROR: CORTEX_M4_0: JTAG Communication Error: (Error -261 @ 0x0) Invalid response was received from the XDS110. (Emulation package 9.6.0.00172) 
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:22:47.519
+!MESSAGE DS_ERROR: CORTEX_M4_0: Breakpoint Manager: Remove job failed: Register/memory write failure[22005]
+
+!SESSION 2022-04-02 16:23:26.557 -----------------------------------------------
 eclipse.buildId=4.19.0.I20210303-1800
 java.version=11.0.13
 java.vendor=Eclipse Adoptium
@@ -8822,121 +8757,198 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
 Framework arguments:  -product com.ti.ccstudio.branding.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product com.ti.ccstudio.branding.product
 
-!ENTRY com.ti.common.core 1 0 2022-04-02 15:32:46.646
+!ENTRY com.ti.common.core 1 0 2022-04-02 16:23:29.949
 !MESSAGE path=ccs_base/DebugServer
 
-!ENTRY com.ti.common.core 1 0 2022-04-02 15:32:46.647
+!ENTRY com.ti.common.core 1 0 2022-04-02 16:23:29.950
 !MESSAGE debugServerDir=C:/ti/ccs1110/ccs/ccs_base/DebugServer
 
-!ENTRY com.ti.ccstudio.ui 1 0 2022-04-02 15:33:15.002
+!ENTRY com.ti.ccstudio.ui 1 0 2022-04-02 16:23:40.301
 !MESSAGE CCS IDE session started!
 	CCS build: 11.1.0.00011
 	CCS location: C:/ti/ccs1110/ccs
 	Workspace location: C:/Users/Student/workspace_v11
 
-!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-02 15:33:15.477
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-02 16:23:40.516
 !MESSAGE constructor
 
-!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-02 15:33:15.478
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-02 16:23:40.517
 !MESSAGE done with directories
 
-!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-02 15:33:15.479
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-02 16:23:40.518
 !MESSAGE loading ti_logger
 
-!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-02 15:33:15.481
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-02 16:23:40.521
 !MESSAGE Platform os: win32
 
-!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-02 15:33:15.482
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-02 16:23:40.522
 !MESSAGE loading cToolsIF
 
-!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-02 15:33:15.532
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-02 16:23:40.525
 !MESSAGE loading cTools
 
-!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-02 15:33:15.585
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-02 16:23:40.528
 !MESSAGE loading TraceFactory
 
-!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-02 15:33:15.641
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-02 16:23:40.531
 !MESSAGE loading sqlite3
 
-!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-02 15:33:15.697
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-02 16:23:40.533
 !MESSAGE loading CloudTrace
 
-!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-02 15:33:15.861
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2022-04-02 16:23:40.541
 !MESSAGE CloudTrace interface loaded
 
-!ENTRY com.ti.ccstudio.project.ui.webcontent 1 0 2022-04-02 15:33:16.035
-!MESSAGE CCS HTTP adapter started! [ccs.port:50681] - Open 'http://localhost:50681/ide' in web browser to see listing of available APIs...
+!ENTRY com.ti.ccstudio.project.ui.webcontent 1 0 2022-04-02 16:23:40.664
+!MESSAGE CCS HTTP adapter started! [ccs.port:63508] - Open 'http://localhost:63508/ide' in web browser to see listing of available APIs...
 
-!ENTRY com.ti.ccstudio.app.center 4 0 2022-04-02 15:33:16.172
-!MESSAGE Unable to read http://software-dl.ti.com/ccs/non-esd/ccs_appcenter/apps_11.1.0.json file.
-!STACK 0
-java.net.UnknownHostException: software-dl.ti.com
-	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)
-	at java.base/java.net.Socket.connect(Unknown Source)
-	at java.base/sun.net.NetworkClient.doConnect(Unknown Source)
-	at java.base/sun.net.www.http.HttpClient.openServer(Unknown Source)
-	at java.base/sun.net.www.http.HttpClient.openServer(Unknown Source)
-	at java.base/sun.net.www.http.HttpClient.<init>(Unknown Source)
-	at java.base/sun.net.www.http.HttpClient.New(Unknown Source)
-	at java.base/sun.net.www.http.HttpClient.New(Unknown Source)
-	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(Unknown Source)
-	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(Unknown Source)
-	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(Unknown Source)
-	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(Unknown Source)
-	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(Unknown Source)
-	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
-	at java.base/java.net.URL.openStream(Unknown Source)
-	at com.ti.ccstudio.app.center.internal.CCSAppCenter.readFile(CCSAppCenter.java:190)
-	at com.ti.ccstudio.app.center.internal.CCSAppCenter.getAppJson_0(CCSAppCenter.java:206)
-	at com.ti.ccstudio.app.center.internal.CCSAppCenter.access$1(CCSAppCenter.java:205)
-	at com.ti.ccstudio.app.center.internal.CCSAppCenter$1.run(CCSAppCenter.java:177)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:24:40.870
+!MESSAGE DS_ERROR: CS_DAP_0: Error initializing emulator: (Error -261 @ 0x0) Invalid response was received from the XDS110. (Emulation package 9.6.0.00172) 
 
-!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2022-04-02 15:33:38.556
-!MESSAGE Connection to https://software-dl.ti.com/ccs/non-esd/dvt/ccs6.0/p2.index failed on No such host is known (software-dl.ti.com). Retry attempt 0 started
-!STACK 0
-java.net.UnknownHostException: No such host is known (software-dl.ti.com)
-	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
-	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(Unknown Source)
-	at java.base/java.net.InetAddress.getAddressesFromNameService(Unknown Source)
-	at java.base/java.net.InetAddress$NameServiceAddresses.get(Unknown Source)
-	at java.base/java.net.InetAddress.getAllByName0(Unknown Source)
-	at java.base/java.net.InetAddress.getAllByName(Unknown Source)
-	at java.base/java.net.InetAddress.getAllByName(Unknown Source)
-	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
-	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1003)
-	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:995)
-	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:991)
-	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:76)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
 
-!ENTRY org.eclipse.equinox.p2.transport.ecf 4 1006 2022-04-02 15:33:38.794
-!MESSAGE Unknown Host: https://software-dl.ti.com/ccs/non-esd/dvt/ccs6.0/content.xml
-!STACK 0
-java.net.UnknownHostException: software-dl.ti.com
-	at java.base/java.net.InetAddress$CachedAddresses.get(Unknown Source)
-	at java.base/java.net.InetAddress.getAllByName0(Unknown Source)
-	at java.base/java.net.InetAddress.getAllByName(Unknown Source)
-	at java.base/java.net.InetAddress.getAllByName(Unknown Source)
-	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
-	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:248)
-	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:71)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:24:41.143
+!MESSAGE DS_ERROR: Error initializing emulator:
+(Error -261 @ 0x0)
+Invalid response was received from the XDS110.
+(Emulation package 9.6.0.00172)
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:25:01.307
+!MESSAGE DS_ERROR: CORTEX_M4_0: JTAG Communication Error: (Error -261 @ 0x0) Invalid response was received from the XDS110. (Emulation package 9.6.0.00172) 
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:25:01.330
+!MESSAGE DS_ERROR: CORTEX_M4_0: Breakpoint Manager: Remove job failed: Register/memory write failure[22005]
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:26:21.420
+!MESSAGE DS_ERROR: CORTEX_M4_0: JTAG Communication Error: (Error -261 @ 0x0) Invalid response was received from the XDS110. (Emulation package 9.6.0.00172) 
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:26:21.443
+!MESSAGE DS_ERROR: CORTEX_M4_0: Breakpoint Manager: Remove job failed: Register/memory write failure[22005]
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:27:01.840
+!MESSAGE DS_ERROR: CS_DAP_0: Error initializing emulator: (Error -261 @ 0x0) Invalid response was received from the XDS110. (Emulation package 9.6.0.00172) 
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:27:02.035
+!MESSAGE DS_ERROR: Error initializing emulator:
+(Error -261 @ 0x0)
+Invalid response was received from the XDS110.
+(Emulation package 9.6.0.00172)
+
+
+!ENTRY org.eclipse.jface 2 0 2022-04-02 16:27:31.377
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-04-02 16:27:31.377
+!MESSAGE A conflict occurred for ALT+E:
+Binding(ALT+E,
+	ParameterizedCommand(Command(com.ti.ccstudio.debug.ui.command.restoreDebugState,Restore Debug State,
+		Restore debug state for the selected core(s),
+		Category(com.ti.ccstudio.debug.ui.commandCategory,Code Composer Studio Debug Commands,Set of commands for Code Composer Studio debug actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6795c28a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.debugging,,,system)
+Binding(ALT+E,
+	ParameterizedCommand(Command(org.eclipse.tm.terminal.command1,Terminal view insert,
+		,
+		Category(org.eclipse.tm.terminal.category1,Terminal view commands,Terminal view commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@55633015,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.tm.terminal.TerminalContext,,,system)
+
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:29:43.718
+!MESSAGE DS_ERROR: CORTEX_M4_0: JTAG Communication Error: (Error -261 @ 0x0) Invalid response was received from the XDS110. (Emulation package 9.6.0.00172) 
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:29:43.741
+!MESSAGE DS_ERROR: CORTEX_M4_0: Breakpoint Manager: Remove job failed: Register/memory write failure[22005]
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:31:34.330
+!MESSAGE DS_ERROR: CORTEX_M4_0: JTAG Communication Error: (Error -261 @ 0x0) Invalid response was received from the XDS110. (Emulation package 9.6.0.00172) 
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:31:34.347
+!MESSAGE DS_ERROR: CORTEX_M4_0: Breakpoint Manager: Remove job failed: Register/memory write failure[22005]
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:33:20.815
+!MESSAGE DS_ERROR: CS_DAP_0: Error initializing emulator: (Error -260 @ 0x0) An attempt to connect to the XDS110 failed. The cause may be one or more of: no XDS110 is connected, invalid firmware update, invalid XDS110 serial number, or faulty USB cable. The firmware and serial number may be updated using the xdsdfu utility found in the .../ccs_base/common/uscif/xds110 directory of your installation. View the XDS110SupportReadMe.pdf file there for instructions. (Emulation package 9.6.0.00172) 
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:33:21.104
+!MESSAGE DS_ERROR: Error initializing emulator:
+(Error -260 @ 0x0)
+An attempt to connect to the XDS110 failed.
+The cause may be one or more of: no XDS110 is connected, invalid
+firmware update, invalid XDS110 serial number, or faulty USB
+cable. The firmware and serial number may be updated using the
+xdsdfu utility found in the .../ccs_base/common/uscif/xds110
+directory of your installation. View the XDS110SupportReadMe.pdf
+file there for instructions.
+(Emulation package 9.6.0.00172)
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:33:23.227
+!MESSAGE DS_ERROR: CS_DAP_0: Error initializing emulator: (Error -260 @ 0x0) An attempt to connect to the XDS110 failed. The cause may be one or more of: no XDS110 is connected, invalid firmware update, invalid XDS110 serial number, or faulty USB cable. The firmware and serial number may be updated using the xdsdfu utility found in the .../ccs_base/common/uscif/xds110 directory of your installation. View the XDS110SupportReadMe.pdf file there for instructions. (Emulation package 9.6.0.00172) 
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:33:23.317
+!MESSAGE DS_ERROR: Error initializing emulator:
+(Error -260 @ 0x0)
+An attempt to connect to the XDS110 failed.
+The cause may be one or more of: no XDS110 is connected, invalid
+firmware update, invalid XDS110 serial number, or faulty USB
+cable. The firmware and serial number may be updated using the
+xdsdfu utility found in the .../ccs_base/common/uscif/xds110
+directory of your installation. View the XDS110SupportReadMe.pdf
+file there for instructions.
+(Emulation package 9.6.0.00172)
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:33:24.114
+!MESSAGE DS_ERROR: CS_DAP_0: Error initializing emulator: (Error -260 @ 0x0) An attempt to connect to the XDS110 failed. The cause may be one or more of: no XDS110 is connected, invalid firmware update, invalid XDS110 serial number, or faulty USB cable. The firmware and serial number may be updated using the xdsdfu utility found in the .../ccs_base/common/uscif/xds110 directory of your installation. View the XDS110SupportReadMe.pdf file there for instructions. (Emulation package 9.6.0.00172) 
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:33:24.201
+!MESSAGE DS_ERROR: Error initializing emulator:
+(Error -260 @ 0x0)
+An attempt to connect to the XDS110 failed.
+The cause may be one or more of: no XDS110 is connected, invalid
+firmware update, invalid XDS110 serial number, or faulty USB
+cable. The firmware and serial number may be updated using the
+xdsdfu utility found in the .../ccs_base/common/uscif/xds110
+directory of your installation. View the XDS110SupportReadMe.pdf
+file there for instructions.
+(Emulation package 9.6.0.00172)
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:33:24.776
+!MESSAGE DS_ERROR: CS_DAP_0: Error initializing emulator: (Error -260 @ 0x0) An attempt to connect to the XDS110 failed. The cause may be one or more of: no XDS110 is connected, invalid firmware update, invalid XDS110 serial number, or faulty USB cable. The firmware and serial number may be updated using the xdsdfu utility found in the .../ccs_base/common/uscif/xds110 directory of your installation. View the XDS110SupportReadMe.pdf file there for instructions. (Emulation package 9.6.0.00172) 
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:33:24.863
+!MESSAGE DS_ERROR: Error initializing emulator:
+(Error -260 @ 0x0)
+An attempt to connect to the XDS110 failed.
+The cause may be one or more of: no XDS110 is connected, invalid
+firmware update, invalid XDS110 serial number, or faulty USB
+cable. The firmware and serial number may be updated using the
+xdsdfu utility found in the .../ccs_base/common/uscif/xds110
+directory of your installation. View the XDS110SupportReadMe.pdf
+file there for instructions.
+(Emulation package 9.6.0.00172)
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:33:51.947
+!MESSAGE DS_ERROR: CORTEX_M4_0: JTAG Communication Error: (Error -261 @ 0x0) Invalid response was received from the XDS110. (Emulation package 9.6.0.00172) 
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2022-04-02 16:33:51.960
+!MESSAGE DS_ERROR: CORTEX_M4_0: Breakpoint Manager: Remove job failed: Register/memory write failure[22005]
+

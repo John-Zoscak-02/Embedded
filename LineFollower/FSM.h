@@ -6,29 +6,21 @@
 // Type Definitions
 typedef enum {
     Inactive,
-    PivotLeft,
-    CheckPivotLeft,
-    RotateLeft,
-    CheckRotateLeft,
-    ForwardLeft,
-    CheckForwardLeft,
-    Center,
-    CheckCenter,
-    ForwardRight,
-    CheckForwardRight,
-    RotateRight,
-    CheckRotateRight,
-    PivotRight,
-    CheckPivotRight,
     Bumped,
-    Lost,
+    PosLeft,
+//    PosLeft2,
+//    HardRight,
+    PosRight,
+//    PosRight2,
+//    HardLeft,
+    PosCenter,
+    PosLost
 } FSMState;
 
 typedef struct {
     FSMState    CurrentState;           // Current state of the FSM
 //    FSMState    PreviousState;          // The previous state
     uint8_t     Position;               // Current Position according to Reflectance_Center()
-    uint8_t     Lost;
     uint8_t     BumpInput;              // Active bumps according to Bump_Input()
     uint8_t     LaunchPadInput;         // Input from the pushbuttons
 } FSMType;
