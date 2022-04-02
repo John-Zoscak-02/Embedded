@@ -40,7 +40,7 @@ void Task() {
     }
 }
 
-int position(uint8_t data) {
+int8_t position(uint8_t data) {
     signed short WEIGHTS[] = {334, 238, 142, 48, -48, -142, -238, -334};
    // Declare kbits to count the number of bits that were 1
    uint8_t kbits = 0;

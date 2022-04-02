@@ -27,7 +27,7 @@ typedef enum {
 typedef struct {
     FSMState    CurrentState;           // Current state of the FSM
 //    FSMState    PreviousState;          // The previous state
-    uint8_t     Position;               // Current Position according to Reflectance_Center()
+    int8_t     Position;               // Current Position according to Reflectance_Center()
     uint8_t     Lost;
     uint8_t     BumpInput;              // Active bumps according to Bump_Input()
     uint8_t     LaunchPadInput;         // Input from the pushbuttons

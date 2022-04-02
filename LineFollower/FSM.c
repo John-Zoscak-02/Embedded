@@ -38,25 +38,25 @@ FSMState NextStateFunction(FSMType *FSM)
                 if (FSM->Lost) {
                     NextState = Lost;
                 }
-                else if (-334 <= FSM->Position <= -239) {
+                else if (-334 <= FSM->Position && FSM->Position <= -239) {
                     NextState = PivotLeft;
                 }
-                else if (-238 <= FSM->Position <= -143) {
+                else if (-238 <= FSM->Position && FSM->Position <= -143) {
                     NextState = RotateLeft;
                 }
-                else if (-142 <= FSM->Position <= -48) {
+                else if (-142 <= FSM->Position && FSM->Position <= -48) {
                     NextState = ForwardLeft;
                 }
-                else if (-48 <= FSM->Position <= 48) {
+                else if (-48 <= FSM->Position && FSM->Position <= 48) {
                     NextState = Center;
                 }
-                else if (48 <= FSM->Position <= 142) {
+                else if (48 <= FSM->Position && FSM->Position <= 142) {
                     NextState = ForwardRight;
                 }
-                else if (143 <= FSM->Position <= 238) {
+                else if (143 <= FSM->Position && FSM->Position <= 238) {
                     NextState = RotateRight;
                 }
-                else if (239 <= FSM->Position <= 334) {
+                else if (239 <= FSM->Position && FSM->Position <= 334) {
                     NextState = PivotRight;
                 }
             }
@@ -75,25 +75,25 @@ FSMState NextStateFunction(FSMType *FSM)
                 if (FSM->Lost) {
                     NextState = Lost;
                 }
-                else if (-334 <= FSM->Position <= -239) {
+                else if (-334 <= FSM->Position && FSM->Position <= -239) {
                     NextState = PivotLeft;
                 }
-                else if (-238 <= FSM->Position <= -143) {
+                else if (-238 <= FSM->Position && FSM->Position <= -143) {
                     NextState = RotateLeft;
                 }
-                else if (-142 <= FSM->Position <= -48) {
+                else if (-142 <= FSM->Position && FSM->Position <= -48) {
                     NextState = ForwardLeft;
                 }
-                else if (-48 <= FSM->Position <= 48) {
+                else if (-48 <= FSM->Position && FSM->Position <= 48) {
                     NextState = Center;
                 }
-                else if (48 <= FSM->Position <= 142) {
+                else if (48 <= FSM->Position && FSM->Position <= 142) {
                     NextState = ForwardRight;
                 }
-                else if (143 <= FSM->Position <= 238) {
+                else if (143 <= FSM->Position && FSM->Position <= 238) {
                     NextState = RotateRight;
                 }
-                else if (239 <= FSM->Position <= 334) {
+                else if (239 <= FSM->Position && FSM->Position <= 334) {
                     NextState = PivotRight;
                 }
             }
@@ -116,10 +116,10 @@ FSMState NextStateFunction(FSMType *FSM)
                 if (FSM->Lost) {
                     NextState = Lost;
                 }
-                else if (-334 <= FSM->Position <= -239) {
+                else if (-334 <= FSM->Position && FSM->Position <= -239) {
                     NextState = PivotLeft;
                 }
-                else if (-238 <= FSM->Position <= -143) {
+                else if (-238 <= FSM->Position && FSM->Position <= -143) {
                     NextState = RotateLeft;
                 }
                 else {
@@ -141,25 +141,25 @@ FSMState NextStateFunction(FSMType *FSM)
                 if (FSM->Lost) {
                     NextState = Lost;
                 }
-                else if (-334 <= FSM->Position <= -239) {
+                else if (-334 <= FSM->Position && FSM->Position <= -239) {
                     NextState = PivotLeft;
                 }
-                else if (-238 <= FSM->Position <= -143) {
+                else if (-238 <= FSM->Position && FSM->Position <= -143) {
                     NextState = RotateLeft;
                 }
-                else if (-142 <= FSM->Position <= -48) {
+                else if (-142 <= FSM->Position && FSM->Position <= -48) {
                     NextState = ForwardLeft;
                 }
-                else if (-48 <= FSM->Position <= 48) {
+                else if (-48 <= FSM->Position && FSM->Position <= 48) {
                     NextState = Center;
                 }
-                else if (48 <= FSM->Position <= 142) {
+                else if (48 <= FSM->Position && FSM->Position <= 142) {
                     NextState = ForwardRight;
                 }
-                else if (143 <= FSM->Position <= 238) {
+                else if (143 <= FSM->Position && FSM->Position <= 238) {
                     NextState = RotateRight;
                 }
-                else if (239 <= FSM->Position <= 334) {
+                else if (239 <= FSM->Position && FSM->Position <= 334) {
                     NextState = PivotRight;
                 }
             }
@@ -178,18 +178,19 @@ FSMState NextStateFunction(FSMType *FSM)
                 if (FSM->Lost) {
                     NextState = Lost;
                 }
-                else if (-334 <= FSM->Position <= -239) {
+                else if (-334 <= FSM->Position && FSM->Position <= -239) {
                     NextState = PivotLeft;
                 }
-                else if (-238 <= FSM->Position <= -143) {
+                else if (-238 <= FSM->Position && FSM->Position <= -143) {
                     NextState = RotateLeft;
                 }
-                else if (-142 <= FSM->Position <= -48) {
+                else if (-142 <= FSM->Position && FSM->Position <= -48) {
                     NextState = ForwardLeft;
                 }
                 else {
                     NextState = CheckRotateLeft;
                 }
+
             }
             break;
         case CheckRotateLeft:
@@ -206,25 +207,25 @@ FSMState NextStateFunction(FSMType *FSM)
                 if (FSM->Lost) {
                     NextState = Lost;
                 }
-                else if (-334 <= FSM->Position <= -239) {
+                else if (-334 <= FSM->Position && FSM->Position <= -239) {
                     NextState = PivotLeft;
                 }
-                else if (-238 <= FSM->Position <= -143) {
+                else if (-238 <= FSM->Position && FSM->Position <= -143) {
                     NextState = RotateLeft;
                 }
-                else if (-142 <= FSM->Position <= -48) {
+                else if (-142 <= FSM->Position && FSM->Position <= -48) {
                     NextState = ForwardLeft;
                 }
-                else if (-48 <= FSM->Position <= 48) {
+                else if (-48 <= FSM->Position && FSM->Position <= 48) {
                     NextState = Center;
                 }
-                else if (48 <= FSM->Position <= 142) {
+                else if (48 <= FSM->Position && FSM->Position <= 142) {
                     NextState = ForwardRight;
                 }
-                else if (143 <= FSM->Position <= 238) {
+                else if (143 <= FSM->Position && FSM->Position <= 238) {
                     NextState = RotateRight;
                 }
-                else if (239 <= FSM->Position <= 334) {
+                else if (239 <= FSM->Position && FSM->Position <= 334) {
                     NextState = PivotRight;
                 }
             }
@@ -243,13 +244,13 @@ FSMState NextStateFunction(FSMType *FSM)
                 if (FSM->Lost) {
                     NextState = Lost;
                 }
-                else if (-238 <= FSM->Position <= -143) {
+                else if (-238 <= FSM->Position && FSM->Position <= -143) {
                     NextState = RotateLeft;
                 }
-                else if (-142 <= FSM->Position <= -48) {
+                else if (-142 <= FSM->Position && FSM->Position <= -48) {
                     NextState = ForwardLeft;
                 }
-                else if (-48 <= FSM->Position <= 48) {
+                else if (-48 <= FSM->Position && FSM->Position <= 48) {
                     NextState = Center;
                 }
                 else {
@@ -271,25 +272,25 @@ FSMState NextStateFunction(FSMType *FSM)
                 if (FSM->Lost) {
                     NextState = Lost;
                 }
-                else if (-334 <= FSM->Position <= -239) {
+                else if (-334 <= FSM->Position && FSM->Position <= -239) {
                     NextState = PivotLeft;
                 }
-                else if (-238 <= FSM->Position <= -143) {
+                else if (-238 <= FSM->Position && FSM->Position <= -143) {
                     NextState = RotateLeft;
                 }
-                else if (-142 <= FSM->Position <= -48) {
+                else if (-142 <= FSM->Position && FSM->Position <= -48) {
                     NextState = ForwardLeft;
                 }
-                else if (-48 <= FSM->Position <= 48) {
+                else if (-48 <= FSM->Position && FSM->Position <= 48) {
                     NextState = Center;
                 }
-                else if (48 <= FSM->Position <= 142) {
+                else if (48 <= FSM->Position && FSM->Position <= 142) {
                     NextState = ForwardRight;
                 }
-                else if (143 <= FSM->Position <= 238) {
+                else if (143 <= FSM->Position && FSM->Position <= 238) {
                     NextState = RotateRight;
                 }
-                else if (239 <= FSM->Position <= 334) {
+                else if (239 <= FSM->Position && FSM->Position <= 334) {
                     NextState = PivotRight;
                 }
             }
@@ -308,13 +309,13 @@ FSMState NextStateFunction(FSMType *FSM)
                 if (FSM->Lost) {
                     NextState = Lost;
                 }
-                else if (-142 <= FSM->Position <= -48) {
+                else if (-142 <= FSM->Position && FSM->Position <= -48) {
                     NextState = ForwardLeft;
                 }
-                else if (-48 <= FSM->Position <= 48) {
+                else if (-48 <= FSM->Position && FSM->Position <= 48) {
                     NextState = Center;
                 }
-                else if (48 <= FSM->Position <= 142) {
+                else if (48 <= FSM->Position && FSM->Position <= 142) {
                     NextState = ForwardRight;
                 }
                 else {
@@ -336,25 +337,25 @@ FSMState NextStateFunction(FSMType *FSM)
                 if (FSM->Lost) {
                     NextState = Lost;
                 }
-                else if (-334 <= FSM->Position <= -239) {
+                else if (-334 <= FSM->Position && FSM->Position <= -239) {
                     NextState = PivotLeft;
                 }
-                else if (-238 <= FSM->Position <= -143) {
+                else if (-238 <= FSM->Position && FSM->Position <= -143) {
                     NextState = RotateLeft;
                 }
-                else if (-142 <= FSM->Position <= -48) {
+                else if (-142 <= FSM->Position && FSM->Position <= -48) {
                     NextState = ForwardLeft;
                 }
-                else if (-48 <= FSM->Position <= 48) {
+                else if (-48 <= FSM->Position && FSM->Position <= 48) {
                     NextState = Center;
                 }
-                else if (48 <= FSM->Position <= 142) {
+                else if (48 <= FSM->Position && FSM->Position <= 142) {
                     NextState = ForwardRight;
                 }
-                else if (143 <= FSM->Position <= 238) {
+                else if (143 <= FSM->Position && FSM->Position <= 238) {
                     NextState = RotateRight;
                 }
-                else if (239 <= FSM->Position <= 334) {
+                else if (239 <= FSM->Position && FSM->Position <= 334) {
                     NextState = PivotRight;
                 }
             }
@@ -373,13 +374,13 @@ FSMState NextStateFunction(FSMType *FSM)
                 if (FSM->Lost) {
                     NextState = Lost;
                 }
-                else if (-48 <= FSM->Position <= 48) {
+                else if (-48 <= FSM->Position && FSM->Position <= 48) {
                     NextState = Center;
                 }
-                else if (48 <= FSM->Position <= 142) {
+                else if (48 <= FSM->Position && FSM->Position <= 142) {
                     NextState = ForwardRight;
                 }
-                else if (143 <= FSM->Position <= 238) {
+                else if (143 <= FSM->Position && FSM->Position <= 238) {
                     NextState = RotateRight;
                 }
             }
@@ -398,25 +399,25 @@ FSMState NextStateFunction(FSMType *FSM)
                 if (FSM->Lost) {
                     NextState = Lost;
                 }
-                else if (-334 <= FSM->Position <= -239) {
+                else if (-334 <= FSM->Position && FSM->Position <= -239) {
                     NextState = PivotLeft;
                 }
-                else if (-238 <= FSM->Position <= -143) {
+                else if (-238 <= FSM->Position && FSM->Position <= -143) {
                     NextState = RotateLeft;
                 }
-                else if (-142 <= FSM->Position <= -48) {
+                else if (-142 <= FSM->Position && FSM->Position <= -48) {
                     NextState = ForwardLeft;
                 }
-                else if (-48 <= FSM->Position <= 48) {
+                else if (-48 <= FSM->Position && FSM->Position <= 48) {
                     NextState = Center;
                 }
-                else if (48 <= FSM->Position <= 142) {
+                else if (48 <= FSM->Position && FSM->Position <= 142) {
                     NextState = ForwardRight;
                 }
-                else if (143 <= FSM->Position <= 238) {
+                else if (143 <= FSM->Position && FSM->Position <= 238) {
                     NextState = RotateRight;
                 }
-                else if (239 <= FSM->Position <= 334) {
+                else if (239 <= FSM->Position && FSM->Position <= 334) {
                     NextState = PivotRight;
                 }
             }
@@ -435,13 +436,13 @@ FSMState NextStateFunction(FSMType *FSM)
                 if (FSM->Lost) {
                     NextState = Lost;
                 }
-                else if (48 <= FSM->Position <= 142) {
+                else if (48 <= FSM->Position && FSM->Position <= 142) {
                     NextState = ForwardRight;
                 }
-                else if (143 <= FSM->Position <= 238) {
+                else if (143 <= FSM->Position && FSM->Position <= 238) {
                     NextState = RotateRight;
                 }
-                else if (239 <= FSM->Position <= 334) {
+                else if (239 <= FSM->Position && FSM->Position <= 334) {
                     NextState = PivotRight;
                 }
             }
@@ -460,25 +461,25 @@ FSMState NextStateFunction(FSMType *FSM)
                 if (FSM->Lost) {
                     NextState = Lost;
                 }
-                else if (-334 <= FSM->Position <= -239) {
+                else if (-334 <= FSM->Position && FSM->Position <= -239) {
                     NextState = PivotLeft;
                 }
-                else if (-238 <= FSM->Position <= -143) {
+                else if (-238 <= FSM->Position && FSM->Position <= -143) {
                     NextState = RotateLeft;
                 }
-                else if (-142 <= FSM->Position <= -48) {
+                else if (-142 <= FSM->Position && FSM->Position <= -48) {
                     NextState = ForwardLeft;
                 }
-                else if (-48 <= FSM->Position <= 48) {
+                else if (-48 <= FSM->Position && FSM->Position <= 48) {
                     NextState = Center;
                 }
-                else if (48 <= FSM->Position <= 142) {
+                else if (48 <= FSM->Position && FSM->Position <= 142) {
                     NextState = ForwardRight;
                 }
-                else if (143 <= FSM->Position <= 238) {
+                else if (143 <= FSM->Position && FSM->Position <= 238) {
                     NextState = RotateRight;
                 }
-                else if (239 <= FSM->Position <= 334) {
+                else if (239 <= FSM->Position && FSM->Position <= 334) {
                     NextState = PivotRight;
                 }
             }
@@ -494,15 +495,15 @@ FSMState NextStateFunction(FSMType *FSM)
             }
             // No push button and also no bump, decide which positional state is next by ReflectanceCenter()
             else {
-                if (FSM->Lost) {
-                    NextState = Lost;
-                }
-                else if (143 <= FSM->Position <= 238) {
-                    NextState = RotateRight;
-                }
-                else if (239 <= FSM->Position <= 334) {
-                    NextState = PivotRight;
-                }
+//                if (FSM->Lost) {
+//                    NextState = Lost;
+//                }
+//                else if (143 <= FSM->Position && FSM->Position <= 238) {
+//                    NextState = RotateRight;
+//                }
+//                else if (239 <= FSM->Position && FSM->Position <= 334) {
+//                    NextState = PivotRight;
+//                }
             }
             break;
         case CheckPivotRight:
@@ -519,25 +520,25 @@ FSMState NextStateFunction(FSMType *FSM)
                 if (FSM->Lost) {
                     NextState = Lost;
                 }
-                else if (-334 <= FSM->Position <= -239) {
+                else if (-334 <= FSM->Position && FSM->Position <= -239) {
                     NextState = PivotLeft;
                 }
-                else if (-238 <= FSM->Position <= -143) {
+                else if (-238 <= FSM->Position && FSM->Position <= -143) {
                     NextState = RotateLeft;
                 }
-                else if (-142 <= FSM->Position <= -48) {
+                else if (-142 <= FSM->Position && FSM->Position <= -48) {
                     NextState = ForwardLeft;
                 }
-                else if (-48 <= FSM->Position <= 48) {
+                else if (-48 <= FSM->Position && FSM->Position <= 48) {
                     NextState = Center;
                 }
-                else if (48 <= FSM->Position <= 142) {
+                else if (48 <= FSM->Position && FSM->Position <= 142) {
                     NextState = ForwardRight;
                 }
-                else if (143 <= FSM->Position <= 238) {
+                else if (143 <= FSM->Position && FSM->Position <= 238) {
                     NextState = RotateRight;
                 }
-                else if (239 <= FSM->Position <= 334) {
+                else if (239 <= FSM->Position && FSM->Position <= 334) {
                     NextState = PivotRight;
                 }
             }
@@ -559,25 +560,25 @@ FSMState NextStateFunction(FSMType *FSM)
                 else if (FSM->BumpInput) {
                     NextState = Bumped;
                 }
-                else if (-334 <= FSM->Position <= -239) {
+                else if (-334 <= FSM->Position && FSM->Position <= -239) {
                     NextState = PivotLeft;
                 }
-                else if (-238 <= FSM->Position <= -143) {
+                else if (-238 <= FSM->Position && FSM->Position <= -143) {
                     NextState = RotateLeft;
                 }
-                else if (-142 <= FSM->Position <= -48) {
+                else if (-142 <= FSM->Position && FSM->Position <= -48) {
                     NextState = ForwardLeft;
                 }
-                else if (-48 <= FSM->Position <= 48) {
+                else if (-48 <= FSM->Position && FSM->Position <= 48) {
                     NextState = Center;
                 }
-                else if (48 <= FSM->Position <= 142) {
+                else if (48 <= FSM->Position && FSM->Position <= 142) {
                     NextState = ForwardRight;
                 }
-                else if (143 <= FSM->Position <= 238) {
+                else if (143 <= FSM->Position && FSM->Position <= 238) {
                     NextState = RotateRight;
                 }
-                else if (239 <= FSM->Position <= 334) {
+                else if (239 <= FSM->Position && FSM->Position <= 334) {
                     NextState = PivotRight;
                 }
             }
@@ -602,16 +603,16 @@ void OutputFunction(FSMType *FSM) {
             Motor_Right(20, 20);
             break;
         case RotateLeft:
-            Motor_Right(0, 20);
+            Motor_Right(10, 20);
             break;
         case CheckRotateLeft:
-            Motor_Right(0, 20);
+            Motor_Right(10, 20);
             break;
         case ForwardLeft:
-            Motor_Forward(10, 20);
+            Motor_Forward(20, 0);
             break;
         case CheckForwardLeft:
-            Motor_Forward(10, 20);
+            Motor_Forward(20, 0);
             break;
         case Center:
             Motor_Forward(20, 20);
@@ -620,16 +621,16 @@ void OutputFunction(FSMType *FSM) {
             Motor_Forward(20, 20);
             break;
         case ForwardRight:
-            Motor_Forward(20, 10);
+            Motor_Forward(0, 20);
             break;
         case CheckForwardRight:
-            Motor_Forward(20, 10);
+            Motor_Forward(0, 20);
             break;
         case RotateRight:
-            Motor_Left(20, 0);
+            Motor_Left(10, 20);
             break;
         case CheckRotateRight:
-            Motor_Left(20, 0);
+            Motor_Left(10, 20);
             break;
         case PivotRight:
             Motor_Left(20, 20);
