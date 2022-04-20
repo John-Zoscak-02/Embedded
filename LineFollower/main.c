@@ -40,8 +40,8 @@ void Task() {
     }
 }
 
-int8_t position(uint8_t data) {
-    signed short WEIGHTS[] = {334, 238, 142, 48, -48, -142, -238, -334};
+int16_t position(uint8_t data) {
+   signed short WEIGHTS[] = {334, 238, 142, 48, -48, -142, -238, -334};
    // Declare kbits to count the number of bits that were 1
    uint8_t kbits = 0;
    // Declare kpos for arithmetic to determine the displacement from the center
@@ -60,6 +60,8 @@ int8_t position(uint8_t data) {
    return kpos / kbits;
 }
 
+
+FSMState previousState;
  int main(void) {
     FSMType Line_Center_FSM;
 
@@ -80,17 +82,18 @@ int8_t position(uint8_t data) {
     UART0_Init();
 
     while(1){
+        // Take Launchpad input directly and pass it to the FSM
+        launchpad = LaunchPad_Input();
+        Line_Center_FSM.LaunchPadInput = launchpad;
         // Whatever this file's global bump input variable is, give that to the FSMs BumpInput
         Line_Center_FSM.BumpInput = bump_input;
         // Whatever this file's global position input variable is, give that to the FSMs BumpInput
         Line_Center_FSM.Position = position(reflectance_input);
+        // If the reflectance input is all zeros, then we know that
         Line_Center_FSM.Lost = (reflectance_input == 0);
-//        reflectance_input = Reflectance_Read(1000);
-//        UART0_OutString("Got Here \n\r");
+        // Update the Current state of the FSM to the output of the next state that it should be in
         Line_Center_FSM.CurrentState = NextStateFunction(&Line_Center_FSM);
-
-        launchpad = LaunchPad_Input();
-        Line_Center_FSM.LaunchPadInput = launchpad;
+        Line_Center_FSM.PreviousState = Line_Center_FSM.PreviousState;
 
         //This code below is capable of decoding the ordinals of the FSM enumerations types into strings, and then uses that to print the current state to the terminal
         switch (Line_Center_FSM.CurrentState) {
@@ -98,25 +101,58 @@ int8_t position(uint8_t data) {
                 UART0_OutString("Inactive\n\r");
                 break;
             case 1:
-                UART0_OutString("Bumped\n\r");
+                UART0_OutString("PivotLeft\n\r");
                 break;
             case 2:
-                UART0_OutString("PosLeft\n\r");
+                UART0_OutString("CheckPivotLeft\n\r");
                 break;
             case 3:
-                UART0_OutString("PosRight\n\r");
+                UART0_OutString("RotateLeft\n\r");
                 break;
             case 4:
-                UART0_OutString("PosCenter\n\r");
+                UART0_OutString("CheckRotateLeft\n\r");
                 break;
             case 5:
-                UART0_OutString("PosLost\n\r");
+                UART0_OutString("ForwardLeft\n\r");
+                break;
+            case 6:
+                UART0_OutString("CheckForwardLeft\n\r");
+                break;
+            case 7:
+                UART0_OutString("Center\n\r");
+                break;
+            case 8:
+                UART0_OutString("CheckCenter\n\r");
+                break;
+            case 9:
+                UART0_OutString("ForwardRight\n\r");
+                break;
+            case 10:
+                UART0_OutString("CheckForwardRight\n\r");
+                break;
+            case 11:
+                UART0_OutString("RotateRight\n\r");
+                break;
+            case 12:
+                UART0_OutString("CheckRotateRight\n\r");
+                break;
+            case 13:
+                UART0_OutString("PivotRight\n\r");
+                break;
+            case 14:
+                UART0_OutString("CheckPivotRight\n\r");
+                break;
+            case 15:
+                UART0_OutString("Bumped\n\r");
+                break;
+            case 16:
+                UART0_OutString("Lost\n\r");
                 break;
             default:
                 UART0_OutString("Invalid State\n\r");
                 break;
         }
-
+        // Let the FSM do things based on it's current state
         OutputFunction(&Line_Center_FSM);
     }
 }

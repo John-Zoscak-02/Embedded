@@ -14,6 +14,9 @@ void InitializeFSM(FSMType *FSM)
 {
     // Initialize to the Inactive state when the robot starts and set the turn and brake signals as output pins
     FSM->CurrentState = Inactive;
+    FSM->PreviousState = Inactive;
+    GPIO_setAsOutputPin(GPIO_PORT_P8, GPIO_PIN0 | GPIO_PIN5 | GPIO_PIN6 | GPIO_PIN7);
+    GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN0 | GPIO_PIN5 | GPIO_PIN6 | GPIO_PIN7);
 
     // Initialize dependent robot systems
     LaunchPad_Init();
@@ -113,6 +116,7 @@ FSMState NextStateFunction(FSMType *FSM)
             }
             // No push button and also no bump, decide which positional state is next by ReflectanceCenter()
             else {
+                // Non-check motor states can only go directly to adjacent motor-states
                 if (FSM->Lost) {
                     NextState = Lost;
                 }
@@ -175,6 +179,7 @@ FSMState NextStateFunction(FSMType *FSM)
             }
             // No push button and also no bump, decide which positional state is next by ReflectanceCenter()
             else {
+                // Non-check motor states can only go directly to adjacent motor-states
                 if (FSM->Lost) {
                     NextState = Lost;
                 }
@@ -241,6 +246,7 @@ FSMState NextStateFunction(FSMType *FSM)
             }
             // No push button and also no bump, decide which positional state is next by ReflectanceCenter()
             else {
+                // Non-check motor states can only go directly to adjacent motor-states
                 if (FSM->Lost) {
                     NextState = Lost;
                 }
@@ -269,6 +275,7 @@ FSMState NextStateFunction(FSMType *FSM)
             }
             // No push button and also no bump, decide which positional state is next by ReflectanceCenter()
             else {
+                // Non-check motor states can only go directly to adjacent motor-states
                 if (FSM->Lost) {
                     NextState = Lost;
                 }
@@ -306,6 +313,7 @@ FSMState NextStateFunction(FSMType *FSM)
             }
             // No push button and also no bump, decide which positional state is next by ReflectanceCenter()
             else {
+                // Non-check motor states can only go directly to adjacent motor-states
                 if (FSM->Lost) {
                     NextState = Lost;
                 }
@@ -361,6 +369,7 @@ FSMState NextStateFunction(FSMType *FSM)
             }
             break;
         case ForwardRight:
+
             // Push button Port 1 Pin 4 takes highest priority
             if (FSM->LaunchPadInput & 0b10) {
                 NextState = Inactive;
@@ -371,6 +380,7 @@ FSMState NextStateFunction(FSMType *FSM)
             }
             // No push button and also no bump, decide which positional state is next by ReflectanceCenter()
             else {
+                // Non-check motor states can only go directly to adjacent motor-states
                 if (FSM->Lost) {
                     NextState = Lost;
                 }
@@ -433,6 +443,7 @@ FSMState NextStateFunction(FSMType *FSM)
             }
             // No push button and also no bump, decide which positional state is next by ReflectanceCenter()
             else {
+                // Non-check motor states can only go directly to adjacent motor-states
                 if (FSM->Lost) {
                     NextState = Lost;
                 }
@@ -495,15 +506,16 @@ FSMState NextStateFunction(FSMType *FSM)
             }
             // No push button and also no bump, decide which positional state is next by ReflectanceCenter()
             else {
-//                if (FSM->Lost) {
-//                    NextState = Lost;
-//                }
-//                else if (143 <= FSM->Position && FSM->Position <= 238) {
-//                    NextState = RotateRight;
-//                }
-//                else if (239 <= FSM->Position && FSM->Position <= 334) {
-//                    NextState = PivotRight;
-//                }
+                // Non-check motor states can only go directly to adjacent motor-states
+                if (FSM->Lost) {
+                    NextState = Lost;
+                }
+                else if (143 <= FSM->Position && FSM->Position <= 238) {
+                    NextState = RotateRight;
+                }
+                else if (239 <= FSM->Position && FSM->Position <= 334) {
+                    NextState = PivotRight;
+                }
             }
             break;
         case CheckPivotRight:
@@ -584,6 +596,7 @@ FSMState NextStateFunction(FSMType *FSM)
             }
             break;
     }
+    FSM->PreviousState = FSM->CurrentState;
     return NextState;
 }
 
@@ -592,56 +605,138 @@ FSMState NextStateFunction(FSMType *FSM)
 //--------------------------------------------------------------------------
 void OutputFunction(FSMType *FSM) {
     switch (FSM->CurrentState) {
-        // If in the inactive state, stop
+        // If in the inactive state, stop, and turn off all of the lights
         case Inactive:
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN0);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN5);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN7);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN6);
+            // Stop motors when in the inactive state
             Motor_Stop();
             break;
+        // If in a left turning motor state, turn on the left turn signal and turn off the right turn signal
         case PivotLeft:
-            Motor_Right(20, 20);
+            GPIO_setOutputHighOnPin(GPIO_PORT_P8, GPIO_PIN0);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN5);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN7);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN6);
+            // Pivot left
+            Motor_Left(20, 20);
             break;
         case CheckPivotLeft:
-            Motor_Right(20, 20);
+            GPIO_setOutputHighOnPin(GPIO_PORT_P8, GPIO_PIN0);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN5);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN7);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN6);
+            Motor_Left(20, 20);
             break;
         case RotateLeft:
-            Motor_Right(10, 20);
+            GPIO_setOutputHighOnPin(GPIO_PORT_P8, GPIO_PIN0);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN5);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN7);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN6);
+            // Slight left pivot
+            Motor_Left(10, 20);
             break;
         case CheckRotateLeft:
-            Motor_Right(10, 20);
+            GPIO_setOutputHighOnPin(GPIO_PORT_P8, GPIO_PIN0);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN5);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN7);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN6);
+            Motor_Left(10, 20);
             break;
         case ForwardLeft:
-            Motor_Forward(20, 0);
+            GPIO_setOutputHighOnPin(GPIO_PORT_P8, GPIO_PIN0);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN5);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN7);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN6);
+            // Non pivot forward/left
+            Motor_Forward(0, 20);
             break;
         case CheckForwardLeft:
-            Motor_Forward(20, 0);
+            GPIO_setOutputHighOnPin(GPIO_PORT_P8, GPIO_PIN0);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN5);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN7);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN6);
+            Motor_Forward(0, 20);
             break;
+        // If in forward moving state, turn on both turn signals
         case Center:
+            GPIO_setOutputHighOnPin(GPIO_PORT_P8, GPIO_PIN0);
+            GPIO_setOutputHighOnPin(GPIO_PORT_P8, GPIO_PIN5);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN7);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN6);
+            // drive straight
             Motor_Forward(20, 20);
             break;
         case CheckCenter:
+            GPIO_setOutputHighOnPin(GPIO_PORT_P8, GPIO_PIN0);
+            GPIO_setOutputHighOnPin(GPIO_PORT_P8, GPIO_PIN5);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN7);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN6);
             Motor_Forward(20, 20);
             break;
+        // If in a right moving state, turn on the right turn signal
         case ForwardRight:
-            Motor_Forward(0, 20);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN0);
+            GPIO_setOutputHighOnPin(GPIO_PORT_P8, GPIO_PIN5);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN7);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN6);
+            // Non pivot forward/right
+            Motor_Forward(20, 0);
             break;
         case CheckForwardRight:
-            Motor_Forward(0, 20);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN0);
+            GPIO_setOutputHighOnPin(GPIO_PORT_P8, GPIO_PIN5);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN7);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN6);
+            Motor_Forward(20, 10);
             break;
         case RotateRight:
-            Motor_Left(10, 20);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN0);
+            GPIO_setOutputHighOnPin(GPIO_PORT_P8, GPIO_PIN5);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN7);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN6);
+            // Slight pivot right
+            Motor_Right(20, 10);
             break;
         case CheckRotateRight:
-            Motor_Left(10, 20);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN0);
+            GPIO_setOutputHighOnPin(GPIO_PORT_P8, GPIO_PIN5);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN7);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN6);
+            Motor_Right(20, 10);
             break;
         case PivotRight:
-            Motor_Left(20, 20);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN0);
+            GPIO_setOutputHighOnPin(GPIO_PORT_P8, GPIO_PIN5);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN7);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN6);
+            // Pivot Right
+            Motor_Right(20, 20);
             break;
         case CheckPivotRight:
-            Motor_Left(20, 20);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN0);
+            GPIO_setOutputHighOnPin(GPIO_PORT_P8, GPIO_PIN5);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN7);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN6);
+            Motor_Right(20, 20);
             break;
+        // If bumped, turn on the brake lights and stop moving
         case Bumped:
+            GPIO_setOutputHighOnPin(GPIO_PORT_P8, GPIO_PIN0);
+            GPIO_setOutputHighOnPin(GPIO_PORT_P8, GPIO_PIN5);
+            GPIO_setOutputHighOnPin(GPIO_PORT_P8, GPIO_PIN7);
+            GPIO_setOutputHighOnPin(GPIO_PORT_P8, GPIO_PIN6);
+            // stop moving
             Motor_Stop();
             break;
+        // If the line is lost, move backwards and turn off all the lights
         case Lost:
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN0);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P8, GPIO_PIN5);
+            GPIO_setOutputHighOnPin(GPIO_PORT_P8, GPIO_PIN7);
+            GPIO_setOutputHighOnPin(GPIO_PORT_P8, GPIO_PIN6);
             Motor_Backward(20, 20);
             break;
     }

@@ -26,7 +26,6 @@ main.obj: ../timer_a.h
 main.obj: ../interrupt.h
 main.obj: ../Clock.h
 main.obj: ../LaunchPad.h
-main.obj: ../Reflectance.h
 
 ../main.c:
 
@@ -79,6 +78,4 @@ C:/ti/ccs1110/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdbool.h:
 ../Clock.h:
 
 ../LaunchPad.h:
-
-../Reflectance.h:
 

@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<item key="LastUsedHeaderTemplate" value="Default C header template"/>
 	<item key="LastUsedSourceTemplate" value="Default C source template"/>
+	<item key="org.eclipse.cdt.utils.ui.controls.FileListControl" value="C:\ti\simplelink_msp432p4_sdk_3_40_01_02\source\third_party\CMSIS\Include"/>
 	<section name="completion_proposal_size">
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
@@ -11,7 +12,7 @@
 		<item key="size.height" value="180"/>
 	</section>
 	<section name="CResourceRenameRefactoringInputPage">
-		<item key="updateReferences" value="true"/>
+		<item key="updateReferences" value="false"/>
 	</section>
 	<section name="org.eclipse.cdt.ui.OPEN_ACTION_SELECTION_DIALOG_SECTION">
 		<item key="DIALOG_X_ORIGIN" value="642"/>
@@ -26,5 +27,8 @@
 		<list key="previousPatterns">
 			<item value="Reflectance_Center"/>
 		</list>
+	</section>
+	<section name="OptionalMessageDialog.hide.">
+		<item key="askReindex.detail" value="0"/>
 	</section>
 </section>
